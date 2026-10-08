@@ -1,0 +1,66 @@
+>> num1=[1 1];
+>> den1=[1 2];
+>> num2=[1];
+>> den2=[500 0 0];
+>> [num,den]=series(num1,den1,num2,den2);
+>> printsys(num,den);
+
+sys = 
+
+        s + 1
+  ------------------
+  500 s^3 + 1000 s^2
+ 
+Continuous-time transfer function.
+Model Properties
+>> sys=tf(num,den)
+
+sys = 
+
+        s + 1
+  ------------------
+  500 s^3 + 1000 s^2
+ 
+Continuous-time transfer function.
+Model Properties
+>> % menggunakan cara ke-2
+>> sys2=tf(num2,den2)
+
+sys2 = 
+
+     1
+  -------
+  500 s^2
+ 
+Continuous-time transfer function.
+Model Properties
+>> sys1=tf(num1,den1)
+
+sys1 = 
+
+  s + 1
+  -----
+  s + 2
+ 
+Continuous-time transfer function.
+Model Properties
+>> sys3=series(sys1,sys2)
+
+sys3 = 
+
+        s + 1
+  ------------------
+  500 s^3 + 1000 s^2
+ 
+Continuous-time transfer function.
+Model Properties
+>> sys3b=sys1*sys2
+
+sys3b = 
+
+        s + 1
+  ------------------
+  500 s^3 + 1000 s^2
+ 
+Continuous-time transfer function.
+Model Properties
